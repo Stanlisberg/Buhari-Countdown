@@ -36,7 +36,7 @@ function Countdown() {
   const myMinute = "Minute";
   const mySecond = "Second";
   // footer current year
-  const thisYear = new Date().getFullYear();
+  // const thisYear = new Date().getFullYear();
 
   const countdownTimer = () => {
     const countDate = new Date("May 23, 2023 00:00:00").getTime();
@@ -111,13 +111,13 @@ function Countdown() {
       displayRef.current.style.color = "white";
     }
   }
-  setInterval(countdownTimer, 1000);
+  // setInterval(countdownTimer, 1000);
 
   const homePage = () => {
-    alert('Hey dear, you are already on the home page, click "ok" to go back.');
+    alert('Holla Comrade, I tricked you... hehehehehe! click "ok" to go back. #Okaybye.');
   };
   const menuBox = () => {
-    setMenu("Html, Css, React, and React-icons");
+    setMenu("Html, Css, React and React-icons");
   };
 
   const deleteIcon = () => {
@@ -127,10 +127,12 @@ function Countdown() {
     }
   };
 
-  // effect for the message in the dom
+  // effect for the message in the dom and the countdown timer
   useEffect(() => {
     setInterval(doThis, 800);
+    setInterval(countdownTimer, 1000);
   }, []);
+
 
   return (
     <>
@@ -361,9 +363,9 @@ function Countdown() {
           <table>
             <thead>
               <tr>
-                <td className="first">&#x1f60b;</td>
-                <td className="second">&#x1f60b;</td>
-                <td className="third">&#x1f60b;</td>
+                <td className="first">&#x1f60f;</td>
+                <td className="second">&#x1f60f;</td>
+                <td className="third">&#x1f60f;</td>
               </tr>
             </thead>
           </table>
@@ -383,7 +385,7 @@ function Countdown() {
           >
             <p>
               Crafted with <span id="span">&#x2764;</span> & <span id="span">&#x1f4a1;</span> by
-              <a href="http://twitter.com/bubuTheCoder" target="_blank"> mmmStanlisberg
+              <a href="http://twitter.com/bubuTheCoder" target="_blank"> Stanlisberg
               </a>
             </p>
             <Google />
