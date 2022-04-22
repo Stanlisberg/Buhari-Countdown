@@ -1,13 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: Open Sans,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+    background-color: #282c34; 
+}
+  
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.heading {
+    font-size: 40px;
+    margin: 1rem;
+}
+
+
+div {
+    display: block;
+}
+
+img {
+  height: 55px;
+  width: 60px;
+  margin: 5px;
+  border-radius: 18px;
+  padding: 2px;
+  border: 1px dashed grey;
+  margin-left: 15px;
+}
+
+ .menu {
+    color: grey;
+    position: absolute;
+    right: 10px;
+    top: 58px;
+    border: 1px dashed grey;
+    width: 9rem;
+    height: 50px;
+    border-radius: 5px;
+    text-align: center;
+ }
+ .delete {
+    position: absolute;
+    right: -1px;
+    top: 1px;
+    font-weight: 100px;
+    color: coral;
+ }
+
+
+.wrapper {
+    align-items: center;
+    /* background-color: #282c34; */
+    color:grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    text-align: center;
+    margin-top: 10px;
+    padding: 13px;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.countdown {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.time-container {
+    display: flex;
+    flex-direction: column;
+    font-weight: 700;
+    margin: 1rem 0;
+    padding: 1.5rem;
+    font-size: 40px;
+
+}
+
+.time-container 
+.my-year,
+.my-month,
+.my-day,
+.my-hour,
+.my-minute,
+.my-second{
+ font-size: 36px;
+}
+
+
+.first-text {
+    position: relative;
+}
+
+.first-text .placeholder {
+    visibility: hidden;
+}
+
+.time-container .time .second-text {
+    align-self: center;
+    display: flex;
+    justify-content: center;
+}
+
+.first-text .second-text {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 115%;
+    width: 100%;
+}
+
+.first-text .second-text 
+.year-timer,
+.month-timer,
+.day-timer,
+.hour-timer,
+.minute-timer,
+.second-timer {
+    position: absolute;
+    max-width: 100%;
+    display: inline-block;
+}
+.first, .second, .third {
+    font-size: 50px;
+}
+
+.footer {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+a {
+    color:tan;
+    text-decoration: none;
+}
+
+#span {
+    color:coral;
+}
+
+/* Media Queries */
+
+@media (min-width: 768px) and (max-width: 1199px) {
+.time-container .time {
+    font-size: 36px;
+}
+.time-container {
+    flex-basis: 33.3%;
+}
+
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+.time-container .time {
+    font-size: 30px;
+}
+.time-container 
+.my-year,
+.my-month,
+.my-day,
+.my-hour,
+.my-minute,
+.my-second  {
+    font-size: 24px;
+}
+.heading {
+    font-size: 30px;
+}
+.time-container {
+    flex-basis: 33.3%;
+}
+
+}
+
+@media (max-width: 575px) {
+.time-container .time  {
+    font-size: 28px;
+}
+.time-container
+.my-year,
+.my-month,
+.my-day,
+.my-hour,
+.my-minute,
+.my-second {
+    font-size: 24px;
+}
+.heading {
+    font-size: 30px;
+}
+.time-container {
+    flex-basis: 50%;
+   /* color: */
+}
 }
