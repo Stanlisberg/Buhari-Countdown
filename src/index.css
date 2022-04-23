@@ -24,8 +24,8 @@ div {
 }
 
 img {
-  height: 69px;
-  width: 74px;
+  height: 77px;
+  width: 77px;
   margin: 5px;
   border-radius: 60px;
   padding: 2px;
@@ -37,34 +37,36 @@ img {
     color: grey;
     position: absolute;
     right: 13px;
-    top: 63px;
+    top: 65px;
     border: 1px dashed grey;
-    width: 9rem;
-    height: 50px;
+    width: 9em;
+    height: 32px;
     border-radius: 5px;
     text-align: center;
  }
- .delete {
-    position: absolute;
-    right: -93px;
-    top: 1px;
-    font-weight: 100px;
+ .delete-me {
     color: coral;
-    height: 200px;
-    width: 200px
+    position: absolute;
+    top: 64px;
+    right: 12px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 0px;
+    font-weight: 30px;
  }
 
 
 .wrapper {
     align-items: center;
-    /* background-color: #282c34; */
     color:grey;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 2px;
     padding: 13px;
 }
 
@@ -164,7 +166,6 @@ a {
 .time-container {
     flex-basis: 33.3%;
 }
-
 }
 
 @media (min-width: 576px) and (max-width: 767px) {

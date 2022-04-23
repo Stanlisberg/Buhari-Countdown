@@ -14,7 +14,7 @@ function Countdown() {
 
   // State for display message and menu-box
   const [data, setData] = useState("");
-  const [menu, setMenu] = useState("");
+  const [menu, setMenu] = useState();
 
   // Refs
   const wrapRef = useRef();
@@ -26,6 +26,7 @@ function Countdown() {
   const footRef = useRef();
   const countRef = useRef(0);
   const msgRef = useRef(0);
+  const infoRef = useRef()
 
   // Setting varables for the year, month, day, hour, minute, and second
   const myYear = "Year";
@@ -107,7 +108,7 @@ function Countdown() {
       homeRef.current.style.color = "grey";
       moonRef.current.style.color = "grey";
       imageRef.current.style.borderColor = "grey";
-      displayRef.current.style.color = "white";
+      displayRef.current.style.color = "tan";
     }
   }
   // setInterval(countdownTimer, 1000);
@@ -116,32 +117,30 @@ function Countdown() {
     alert('Holla Comrade, I tricked you... hehehehehe! click "ok" to go back. #Okaybye.');
   };
   const menuBox = () => {
-    setMenu("Html, Css, React and React-icons");
+    setMenu("Html. Css. React.");
   };
 
   const deleteIcon = () => {
-    const deleteMenu = document.querySelector(".menu");
-    if (deleteMenu) {
-      setMenu("");
-    }
+    setMenu('')
+    
   };
 
   // effect for the message in the dom and the countdown timer
   useEffect(() => {
-    setInterval(doThis, 800);
+    setInterval(doThis, 900);
     setInterval(countdownTimer, 1000);
   }, []);
 
 
   return (
     <>
-      <img ref={imageRef} className="image" src="/images/buhari.jpg" alt="buhari"/>
+      <img ref={imageRef} className="image" src="/images/buhari.jpg" alt=""/>
       <button
         ref={moonRef}
         type="submit"
         style={{
           color: "grey",
-          fontSize: "24px",
+          fontSize: "27px",
           position: "absolute",
           top: "18px",
           right: "24px",
@@ -159,7 +158,7 @@ function Countdown() {
         ref={homeRef}
         style={{
           color: "grey",
-          fontSize: "24px",
+          fontSize: "27px",
           position: "absolute",
           top: "18px",
           right: "67px",
@@ -177,7 +176,7 @@ function Countdown() {
         ref={menuRef}
         style={{
           color: "grey",
-          fontSize: "24px",
+          fontSize: "27px",
           position: "absolute",
           top: "18px",
           right: "110px",
@@ -191,17 +190,17 @@ function Countdown() {
       >
         <HiMenuAlt3 />
       </button>
-    
       {menu ? (
-        <div className="menu">
-          <span onClick={() => deleteIcon()} className="delete">
-            <MdOutlineClear size={17} />
-          </span>
-          {menu}
+        <>
+        <div ref={infoRef}
+          className='menu'> {menu}
         </div>
+        <button onClick={() => deleteIcon()} className="delete-me"><MdOutlineClear size={17} />
+        </button> 
+        </>
       ) : (
-        ""
-      )}
+        '' 
+      )}   
       <div className="container">
         <div className="wrapper" ref={wrapRef}>
           <h1 className="heading">Buhari's Tenure Will Be Over in:</h1>
@@ -355,7 +354,7 @@ function Countdown() {
             style={{
               textAlign: "center",
               fontSize: "20px",
-              color: "aliceblue",
+              color: "tan",
             }}
           >
             {data}
