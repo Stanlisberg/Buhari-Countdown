@@ -101,12 +101,14 @@ function Countdown() {
       moonRef.current.style.color = "#282c34";
       imageRef.current.style.borderColor = "#282c34";
       displayRef.current.style.color = "#282c34";
+      infoRef.current.style.color = "#282c34";
     } else {
       wrapRef.current.style.color = "grey";
       footRef.current.style.color = "grey";
       menuRef.current.style.color = "grey";
       homeRef.current.style.color = "grey";
       moonRef.current.style.color = "grey";
+      infoRef.current.style.color = "grey";
       imageRef.current.style.borderColor = "grey";
       displayRef.current.style.color = "tan";
     }
