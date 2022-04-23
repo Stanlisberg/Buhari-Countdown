@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import Google from "./Google";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { HiMoon } from "react-icons/hi";
 import { FaHome } from "react-icons/fa";
@@ -136,13 +135,13 @@ function Countdown() {
 
   return (
     <>
-      <img ref={imageRef} className="image" src="/images/buhari.jpg" />
+      <img ref={imageRef} className="image" src="/images/buhari.jpg" alt="buhari"/>
       <button
         ref={moonRef}
         type="submit"
         style={{
           color: "grey",
-          fontSize: "20px",
+          fontSize: "24px",
           position: "absolute",
           top: "18px",
           right: "24px",
@@ -160,7 +159,7 @@ function Countdown() {
         ref={homeRef}
         style={{
           color: "grey",
-          fontSize: "20px",
+          fontSize: "24px",
           position: "absolute",
           top: "18px",
           right: "67px",
@@ -178,7 +177,7 @@ function Countdown() {
         ref={menuRef}
         style={{
           color: "grey",
-          fontSize: "20px",
+          fontSize: "24px",
           position: "absolute",
           top: "18px",
           right: "110px",
@@ -192,6 +191,7 @@ function Countdown() {
       >
         <HiMenuAlt3 />
       </button>
+    
       {menu ? (
         <div className="menu">
           <span onClick={() => deleteIcon()} className="delete">
@@ -321,7 +321,7 @@ function Countdown() {
                 </div>
               </span>
               <span className="my-minute">
-                {minute == 1 ? myMinute : `${myMinute}s`}
+                {minute === 1 ? myMinute : `${myMinute}s`}
               </span>
             </div>
             <div className="time-container ">
@@ -378,7 +378,7 @@ function Countdown() {
               display: "flex",
               flexDirection: "row",
               border: "1px dashed grey",
-              marginTop: "25px",
+              marginTop: "35px",
               padding: "2px 15px",
               borderRadius: "10px",
             }}
@@ -388,10 +388,10 @@ function Countdown() {
               <a href="http://twitter.com/bubuTheCoder" target="_blank"> Stanlisberg
               </a>
             </p>
-            <Google />
           </footer>
         </div>
       </div>
+      {/* <Google /> */}
     </>
   );
 }
