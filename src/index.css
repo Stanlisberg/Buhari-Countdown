@@ -6,7 +6,7 @@ body {
 }
   
 
-*{
+*{ 
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -24,10 +24,10 @@ div {
 }
 
 img {
-  height: 77px;
-  width: 77px;
+  height: 78px;
+  width: 78px;
   margin: 5px;
-  border-radius: 60px;
+  border-radius: 38px;
   padding: 2px;
   border: 1px dashed grey;
   margin-left: 15px;
@@ -36,38 +36,34 @@ img {
  .menu {
     color: grey;
     position: absolute;
-    right: 13px;
-    top: 65px;
-    border: 1px dashed white;
-    width: 9em;
-    height: 36px;
+    right: 12px;
+    top: 68px;
+    border: 1px dashed aliceblue;
+    width: 9rem;
+    height: 34px;
     border-radius: 5px;
     text-align: center;
     padding: 4px;
  }
- .delete-me {
-    color: coral;
+ .delete {
     position: absolute;
-    top: 66px;
-    right: 13px;
-    cursor: pointer;
-    background: none;
-    border: none;
-    border-radius: 3px;
-    font-size: 0px;
-    font-weight: 30px;
+    right: -1px;
+    top:-1px;
+    font-weight: 100px;
+    color: coral;
  }
 
 
 .wrapper {
     align-items: center;
+    /* background-color: #282c34; */
     color:grey;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
     text-align: center;
-    margin-top: 2px;
+    margin-top: 10px;
     padding: 13px;
 }
 
@@ -167,11 +163,12 @@ a {
 .time-container {
     flex-basis: 33.3%;
 }
+
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
 .time-container .time {
-    font-size: 32px;
+    font-size: 30px;
 }
 .time-container 
 .my-year,
@@ -180,7 +177,7 @@ a {
 .my-hour,
 .my-minute,
 .my-second  {
-    font-size: 26px;
+    font-size: 24px;
 }
 .heading {
     font-size: 30px;
@@ -193,7 +190,7 @@ a {
 
 @media (max-width: 575px) {
 .time-container .time  {
-    font-size: 31px;
+    font-size: 30px;
 }
 .time-container
 .my-year,
@@ -202,10 +199,10 @@ a {
 .my-hour,
 .my-minute,
 .my-second {
-    font-size: 28px;
+    font-size: 24px;
 }
 .heading {
-    font-size: 34px;
+    font-size: 32px;
 }
 .time-container {
     flex-basis: 50%;

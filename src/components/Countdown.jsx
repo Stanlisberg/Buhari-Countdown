@@ -14,8 +14,7 @@ function Countdown() {
 
   // State for display message and menu-box
   const [data, setData] = useState("");
-
-  const [menu, setMenu] = useState();
+  const [menu, setMenu] = useState("");
 
   // Refs
   const wrapRef = useRef();
@@ -23,11 +22,11 @@ function Countdown() {
   const menuRef = useRef();
   const moonRef = useRef();
   const imageRef = useRef();
-  const messageRef = useState();
   const displayRef = useRef();
   const footRef = useRef();
   const countRef = useRef(0);
   const msgRef = useRef(0);
+  const toolRef = useRef();
 
   // Setting varables for the year, month, day, hour, minute, and second
   const myYear = "Year";
@@ -37,7 +36,7 @@ function Countdown() {
   const myMinute = "Minute";
   const mySecond = "Second";
   // footer current year
-  // const thisYear = new Date().getFullYear();
+  const thisYear = new Date().getFullYear();
 
   const countdownTimer = () => {
     const countDate = new Date("May 23, 2023 00:00:00").getTime();
@@ -73,9 +72,9 @@ function Countdown() {
     }
   };
 
-  // validating the message in the dom
+  // displaying the message in the dom
   const myArray = ["I", "Can't", "Fu*ki~g", "Waaaaaaaaaaaait!!!"];
-  const doThis = () => {
+  let doThis = () => {
     setData(myArray[msgRef.current]);
     msgRef.current = msgRef.current + 1;
 
@@ -102,19 +101,19 @@ function Countdown() {
       moonRef.current.style.color = "#282c34";
       imageRef.current.style.borderColor = "#282c34";
       displayRef.current.style.color = "#282c34";
-      messageRef.current.style.color = "#282c34";
+      toolRef.current.style.borderColor = "#282c34";
     } else {
       wrapRef.current.style.color = "grey";
       footRef.current.style.color = "grey";
       menuRef.current.style.color = "grey";
       homeRef.current.style.color = "grey";
-      displayRef.current.style.color = "tan";
       moonRef.current.style.color = "grey";
       imageRef.current.style.borderColor = "grey";
-      messageRef.current.style.color = "aliceblue";
+      displayRef.current.style.color = "tan";
+      toolRef.current.style.borderColor = "aliceblue";
     }
   }
-  // setInterval(countdownTimer, 1000);
+  setInterval(countdownTimer, 1000);
 
   const homePage = () => {
     alert('Holla Comrade, I tricked you... hehehehehe! click "ok" to go back. #Okaybye.');
@@ -124,20 +123,22 @@ function Countdown() {
   };
 
   const deleteIcon = () => {
-    setMenu('')
-    
+    const deleteMenu = document.querySelector(".menu");
+    if (deleteMenu) {
+      setMenu("");
+      // hey
+    }
   };
 
-  // effect for the message in the dom and the countdown timer
+
+  // effect for the message in the dom
   useEffect(() => {
     setInterval(doThis, 900);
-    setInterval(countdownTimer, 1000);
   }, []);
-
 
   return (
     <>
-      <img ref={imageRef} className="image" src="/images/buhari.jpg" alt=""/>
+      <img ref={imageRef} className="image" src="/images/buhari.jpg" />
       <button
         ref={moonRef}
         type="submit"
@@ -194,15 +195,15 @@ function Countdown() {
         <HiMenuAlt3 />
       </button>
       {menu ? (
-        <>
-        <div  ref={messageRef} className='menu'>{menu}
+        <div ref={toolRef} className="menu">
+          <span onClick={() => deleteIcon()} className="delete">
+            <MdOutlineClear size={17} />
+          </span>
+          {menu}
         </div>
-          <button onClick={() => deleteIcon()} className="delete-me"><MdOutlineClear size={17} />
-          </button> 
-        </>
-      ) : ( 
+      ) : (
         ""
-      )}   
+      )}
       <div className="container">
         <div className="wrapper" ref={wrapRef}>
           <h1 className="heading">Buhari's Tenure Will Be Over in:</h1>
@@ -228,7 +229,7 @@ function Countdown() {
                 </div>
               </span>
               <span className="my-year">
-                {year === 1 ? myYear : `${myYear}s`}
+                {year == 1 ? myYear : `${myYear}s`}
               </span>
             </div>
             <div className="time-container">
@@ -252,7 +253,7 @@ function Countdown() {
                 </div>
               </span>
               <span className="my-month">
-                {month === 1 ? myMonth : `${myMonth}s`}
+                {month == 1 ? myMonth : `${myMonth}s`}
               </span>
             </div>
             <div className="time-container">
@@ -298,7 +299,7 @@ function Countdown() {
                 </div>
               </span>
               <span className="my-hour">
-                {hour === 1 ? myHour : `${myHour}s`}
+                {hour == 1 ? myHour : `${myHour}s`}
               </span>
             </div>
             <div className="time-container">
@@ -322,7 +323,7 @@ function Countdown() {
                 </div>
               </span>
               <span className="my-minute">
-                {minute === 1 ? myMinute : `${myMinute}s`}
+                {minute == 1 ? myMinute : `${myMinute}s`}
               </span>
             </div>
             <div className="time-container ">
@@ -346,7 +347,7 @@ function Countdown() {
                 </div>
               </span>
               <span className="my-second">
-                {second === 1 ? mySecond : `${mySecond}s`}
+                {second == 1 ? mySecond : `${mySecond}s`}
               </span>
             </div>
           </div>
@@ -358,7 +359,8 @@ function Countdown() {
               fontSize: "20px",
               color: "tan",
             }}
-          > {data}
+          >
+            {data}
           </p>
           <table>
             <thead>
@@ -378,7 +380,7 @@ function Countdown() {
               display: "flex",
               flexDirection: "row",
               border: "1px dashed grey",
-              marginTop: "40px",
+              marginTop: "42 px",
               padding: "2px 15px",
               borderRadius: "10px",
             }}
