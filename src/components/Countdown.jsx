@@ -22,11 +22,11 @@ function Countdown() {
   const menuRef = useRef();
   const moonRef = useRef();
   const imageRef = useRef();
+  const messageRef = useState();
   const displayRef = useRef();
   const footRef = useRef();
   const countRef = useRef(0);
   const msgRef = useRef(0);
-  const infoRef = useRef()
 
   // Setting varables for the year, month, day, hour, minute, and second
   const myYear = "Year";
@@ -74,7 +74,7 @@ function Countdown() {
 
   // validating the message in the dom
   const myArray = ["I", "Can't", "Fu*ki~g", "Waaaaaaaaaaaait!!!"];
-  let doThis = () => {
+  const doThis = () => {
     setData(myArray[msgRef.current]);
     msgRef.current = msgRef.current + 1;
 
@@ -101,16 +101,16 @@ function Countdown() {
       moonRef.current.style.color = "#282c34";
       imageRef.current.style.borderColor = "#282c34";
       displayRef.current.style.color = "#282c34";
-      infoRef.current.style.color = "#282c34";
+      messageRef.current.style.color = "#282c34";
     } else {
       wrapRef.current.style.color = "grey";
       footRef.current.style.color = "grey";
       menuRef.current.style.color = "grey";
       homeRef.current.style.color = "grey";
-      moonRef.current.style.color = "grey";
-      infoRef.current.style.color = "grey";
-      imageRef.current.style.borderColor = "grey";
       displayRef.current.style.color = "tan";
+      moonRef.current.style.color = "grey";
+      imageRef.current.style.borderColor = "grey";
+      messageRef.current.style.color = "grey";
     }
   }
   // setInterval(countdownTimer, 1000);
@@ -194,14 +194,13 @@ function Countdown() {
       </button>
       {menu ? (
         <>
-        <div ref={infoRef}
-          className='menu'> {menu}
+        <div  ref={messageRef} className='menu'>{menu}
         </div>
-        <button onClick={() => deleteIcon()} className="delete-me"><MdOutlineClear size={17} />
-        </button> 
+          <button onClick={() => deleteIcon()} className="delete-me"><MdOutlineClear size={17} />
+          </button> 
         </>
-      ) : (
-        '' 
+      ) : ( 
+        ""
       )}   
       <div className="container">
         <div className="wrapper" ref={wrapRef}>
@@ -228,7 +227,7 @@ function Countdown() {
                 </div>
               </span>
               <span className="my-year">
-                {year == 1 ? myYear : `${myYear}s`}
+                {year === 1 ? myYear : `${myYear}s`}
               </span>
             </div>
             <div className="time-container">
@@ -252,7 +251,7 @@ function Countdown() {
                 </div>
               </span>
               <span className="my-month">
-                {month == 1 ? myMonth : `${myMonth}s`}
+                {month === 1 ? myMonth : `${myMonth}s`}
               </span>
             </div>
             <div className="time-container">
@@ -298,7 +297,7 @@ function Countdown() {
                 </div>
               </span>
               <span className="my-hour">
-                {hour == 1 ? myHour : `${myHour}s`}
+                {hour === 1 ? myHour : `${myHour}s`}
               </span>
             </div>
             <div className="time-container">
@@ -346,7 +345,7 @@ function Countdown() {
                 </div>
               </span>
               <span className="my-second">
-                {second == 1 ? mySecond : `${mySecond}s`}
+                {second === 1 ? mySecond : `${mySecond}s`}
               </span>
             </div>
           </div>
@@ -358,8 +357,7 @@ function Countdown() {
               fontSize: "20px",
               color: "tan",
             }}
-          >
-            {data}
+          > {data}
           </p>
           <table>
             <thead>
@@ -392,7 +390,6 @@ function Countdown() {
           </footer>
         </div>
       </div>
-      {/* <Google /> */}
     </>
   );
 }
