@@ -14,6 +14,7 @@ function Countdown() {
 
   // State for display message and menu-box
   const [data, setData] = useState("");
+
   const [menu, setMenu] = useState();
 
   // Refs
@@ -110,7 +111,7 @@ function Countdown() {
       displayRef.current.style.color = "tan";
       moonRef.current.style.color = "grey";
       imageRef.current.style.borderColor = "grey";
-      messageRef.current.style.color = "grey";
+      messageRef.current.style.color = "aliceblue";
     }
   }
   // setInterval(countdownTimer, 1000);
@@ -377,7 +378,7 @@ function Countdown() {
               display: "flex",
               flexDirection: "row",
               border: "1px dashed grey",
-              marginTop: "35px",
+              marginTop: "40px",
               padding: "2px 15px",
               borderRadius: "10px",
             }}

@@ -38,17 +38,18 @@ img {
     position: absolute;
     right: 13px;
     top: 65px;
-    border: 1px dashed grey;
+    border: 1px dashed white;
     width: 9em;
-    height: 32px;
+    height: 36px;
     border-radius: 5px;
     text-align: center;
+    padding: 4px;
  }
  .delete-me {
     color: coral;
     position: absolute;
-    top: 64px;
-    right: 12px;
+    top: 66px;
+    right: 13px;
     cursor: pointer;
     background: none;
     border: none;
@@ -192,7 +193,7 @@ a {
 
 @media (max-width: 575px) {
 .time-container .time  {
-    font-size: 28px;
+    font-size: 31px;
 }
 .time-container
 .my-year,
@@ -201,10 +202,10 @@ a {
 .my-hour,
 .my-minute,
 .my-second {
-    font-size: 24px;
+    font-size: 28px;
 }
 .heading {
-    font-size: 30px;
+    font-size: 34px;
 }
 .time-container {
     flex-basis: 50%;
